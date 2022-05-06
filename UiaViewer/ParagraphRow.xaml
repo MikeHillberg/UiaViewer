@@ -1,0 +1,24 @@
+﻿<Grid  x:Class="UiaViewer.ParagraphRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UiaViewer"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+       Margin="0,10,0,0">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" SharedSizeGroup="StatsColumn" />
+        <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <StackPanel Background="Beige" Width="50" Margin="10,0,10,0" Grid.Column="0">
+        <TextBlock Text="{Binding ParagraphType, Mode=OneWay}" ToolTip="P means Paragraph, H# is heading level" />
+        <TextBlock Text="{Binding ParagraphTiming, Mode=OneWay}" ToolTip="Time to load paragraph (ms)" />
+        <TextBlock Text="{Binding ParagraphFormatCount, Mode=OneWay}" ToolTip="Number of text range formats in paragraph" />
+    </StackPanel>
+
+    <TextBlock x:Name="ParagraphTextBlock" TextWrapping="Wrap" Grid.Column="1" />
+
+</Grid>
